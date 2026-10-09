@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우현의 웹사이트</title>
+    <style>
+        /* 예시 화면과 전혀 다른 깔끔하고 모던한 스타일 적용 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .header-tag {
+            color: #007bff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-top: 10px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        .content-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+        ul {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        /* 두 번째 사진의 '응원하기' 버튼을 세련되게 변형[cite: 13] */
+        .interactive-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.3s;
+        }
+        button:hover { background-color: #218838; }
+        button:active { transform: scale(0.95); }
+        .counter-text {
+            margin-top: 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .notice {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-tag">DEVELOPER PORTFOLIO</div>
+    <h1>안녕하세요, 김우현입니다</h1>
+    <p>컴퓨터인공지능을 전공하며 개발을 즐겁게 배우고 있습니다.</p>
+
+    <div class="content-box">
+        <h2>💡 저의 관심사</h2>
+        <ul>
+            <li><strong>개발:</strong> GitHub 활용</li>
+            <li><strong>여가:</strong> 배틀그라운드 플레이 및 음악감상</li>
+        </ul>
+    </div>
+
+    <!-- 두 번째 사진의 JavaScript 카운터 기능 구현[cite: 13] -->
+    <div class="interactive-section">
+        <h2>방문자 발도장 찍기 🐾</h2>
+        <button id="likeBtn">추천 누르기 👍</button>
+        <div class="counter-text" id="counterDisplay">현재 누적 추천: 0회</div>
+        <p class="notice">추천 수는 현재 페이지에서만 유지되며 새로고침하면 초기화됩니다.</p>
+    </div>
+
+    <script>
+        let count = 0;
+        const btn = document.getElementById('likeBtn');
+        const display = document.getElementById('counterDisplay');
+
+        btn.addEventListener('click', () => {
+            count++;
+            display.innerText = `현재 누적 추천: ${count}회`;
+        });
+    </script>
+</body>
+</html>
